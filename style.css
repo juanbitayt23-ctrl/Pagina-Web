@@ -1,17 +1,167 @@
+/* --------- VARIABLES DE COLOR --------- */
+:root {
+  --azul-oscuro: #0f172a;
+  --azul-medio: #1d4ed8;
+  --azul-claro: #e0edff;
+  --azul-claro-2: #f3f6ff;
+  --texto-principal: #0b1120;
+  --texto-suave: #6b7280;
+  --blanco: #ffffff;
+}
+
+/* --------- ESTILOS GENERALES --------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--azul-claro-2);
+  color: var(--texto-principal);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* --------- HEADER / NAV --------- */
+.site-header {
+  background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-medio));
+  color: var(--blanco);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.8rem;
+}
+
+.site-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--azul-claro);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.nav-link:hover {
+  background: rgba(239, 246, 255, 0.12);
+  color: var(--blanco);
+  transform: translateY(-1px);
+}
+
+.nav-link[aria-current="page"] {
+  background: var(--blanco);
+  color: var(--azul-oscuro);
+  font-weight: 600;
+}
+
+/* --------- MAIN --------- */
+.site-main h2 {
+  margin-top: 2rem;
+  font-size: 1.6rem;
+}
+
+.site-main p {
+  color: var(--texto-suave);
+  max-width: 60ch;
+}
+
+/* --------- GRID DE PROYECTOS --------- */
 .proyectos {
+  margin-top: 1.5rem;
   display: grid;
   gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
+/* CARD DE CADA PROYECTO */
 .proyecto {
-  border: 1px solid #ddd;
-  padding: 1rem;
-  border-radius: 8px;
+  background: var(--blanco);
+  border-radius: 14px;
+  padding: 1.1rem 1.1rem 1.2rem;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  box-shadow: 0 10px 18px rgba(15, 23, 42, 0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
+.proyecto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.16);
+  border-color: rgba(37, 99, 235, 0.5);
+}
+
+.proyecto h3 {
+  margin: 0.2rem 0;
+  font-size: 1.2rem;
+}
+
+.proyecto p {
+  margin: 0;
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+}
+
+/* IMÁGENES DE PROYECTO */
+.proyecto-img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: var(--azul-claro);
+  padding: 0.5rem;
+}
+
+/* --------- BOTONES --------- */
 .btn {
   display: inline-block;
-  padding: 0.5rem 1rem;
+  margin-top: 0.7rem;
+  align-self: flex-start;
+  padding: 0.5rem 1.2rem;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 999px;
+  background: var(--azul-medio);
+  color: var(--blanco);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+}
+
+/* --------- FOOTER --------- */
+.site-footer {
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  background: var(--azul-oscuro);
+  color: var(--azul-claro);
+  text-align: center;
+  font-size: 0.85rem;
 }
